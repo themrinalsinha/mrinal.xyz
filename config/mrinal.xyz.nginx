@@ -1,0 +1,9 @@
+server {
+  listen 80;
+  server_name themrinalsinha.com mrinal.xyz;
+
+  location / {
+    root /srv/mrinal.xyz;
+    index index.html;
+  }
+}

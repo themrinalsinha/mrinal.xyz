@@ -1,0 +1,32 @@
+name: DEPLOY ( mrinal.xyz )
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: Deploying
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setting up SSH Key
+      run: |
+        mkdir -p ~/.ssh/
+        echo "${{ secrets.HOST_SSH_PVT_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.HOST_URL }} >> ~/.ssh/known_hosts
+
+    - name: Deploy to server
+      run: |
+        rsync -avz --delete --exclude '.git' --exclude '.github' \
+        --exclude 'README.md' --exclude '.gitignore' \
+        --exclude 'deploy.yml' --exclude '.config' \
+        -e "ssh -i ~/.ssh/id_rsa" . ${{ secrets.HOST_USERNAME }}@${{ secrets.HOST_URL }}:/srv/mrinal.xyz/
+
+# NOTE: On first run you may need to manually SSH into the server to accept the host key.
+#      This is a one-time operation.
+# cat ~/id_xxx.pub , copy the key and add it to ~/.ssh/authorized_keys on the server.
