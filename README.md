@@ -1,5 +1,5 @@
 # Personal Website
 
-Static website for my personal portfolio.
+Link to the website:
 - https://mrinal.xyz
 - https://themrinalsinha.com
