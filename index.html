@@ -30,7 +30,7 @@
     <!-- Preconnect to Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Schema.org for Google+ and other search engines -->
     <script type="application/ld+json">
@@ -50,190 +50,245 @@
     }
     </script>
 
-    <!-- Stylesheet -->
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <style>
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-
-      body {
-          font-family: 'Roboto', sans-serif;
-          background-color: #f3f4f6;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          height: 100vh;
-          color: #2c3e50;
-      }
-
-      .roboto-regular {
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-
-      .container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          flex-grow: 1;
-      }
-
-      .card {
-          margin-left: 20px;
-          margin-right: 20px;
-          text-align: center;
-          background-color: #ffffff;
-          padding: 40px;
-          border-radius: 12px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          max-width: 500px;
-      }
-
-      .profile-pic {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-bottom: 20px;
-          border: 1px solid #3498db;
-      }
-
-      h1 {
-          font-size: 2.5em;
-          font-weight: 200;
-          color: #2c3e50;
-      }
-
-      .title {
-          font-size: 1.2em;
-          margin-bottom: 1em;
-          color: #7f8c8d;
-      }
-
-      p {
-          font-size: 1.1em;
-          line-height: 1.5em;
-          margin-bottom: 1.5em;
-          color: #34495e;
-      }
-
-      p.about {
-          font-weight: 200;
-          font-size: 1em;
-          text-align: justify;
-      }
-
-      .paragraph-with-line {
-          border-left: 3px solid #7f8c8d; /* Adjust thickness and color */
-          padding-left: 10px; /* Add space between the line and text */
-          margin: 10px 0; /* Optional margin for spacing around the paragraph */
-      }
-
-      blockquote {
-        text-align: justify;
-        color: #7f8c8d;
-      }
-
-      .button {
-          text-decoration: none;
-          color: #fff;
-          background-color: #3498db;
-          padding: 10px 20px;
-          border-radius: 5px;
-          font-size: 1em;
-          transition: background-color 0.3s ease;
-          font-weight: 500;
-      }
-
-      .button:hover {
-          background-color: #2980b9;
-      }
-
-      /* Social Media Links */
-      .social-icons {
-          display: flex;
-          justify-content: center;
-          margin-top: 20px;
-      }
-
-      .icon {
-          text-decoration: none;
-          color: #3498db;
-          margin: 0 10px;
-          font-size: 1.5em;
-          transition: color 0.3s ease;
-      }
-
-      .icon:hover {
-          color: #2980b9;
-      }
-
-      /* Fixed Footer */
-      footer > p {
-          text-align: center;
-          color: #7f8c8d;
-          font-size: 0.9em;
-          margin-top: 20px;
-      }
-
-    </style>
-
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/62d59e2514.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-primary: #f3f4f6;
+            --bg-card: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #60a5fa;
+            --text-primary: #f3f4f6;
+            --text-secondary: #d1d5db;
+            --bg-primary: #111827;
+            --bg-card: #1f2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: var(--transition);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            max-width: 550px;
+            width: 100%;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            background: linear-gradient(120deg, var(--primary-color), #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-info .title {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .quote {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1rem;
+            font-style: italic;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .content {
+            color: var(--text-secondary);
+            margin: 1.5rem 0;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .icon {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .icon:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--bg-card);
+            border: none;
+            padding: 0.75rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(45deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <main class="card">
+        <div class="profile">
             <img src="https://dl.mrinal.xyz/assets/mrinal_4.PNG" alt="Mrinal Sinha" class="profile-pic">
-            <h1>Mrinal Sinha</h1>
-            <p class="title">Engineering @ Paylocity</p>
-            <p class="about">
-                <blockquote class="paragraph-with-line">
-                    Held the position of Senior Software Engineer at Airbase, which was acquired by Paylocity in October 2024.
-                </blockquote>
-            </p>
-            <p class="about">
+            <div class="profile-info">
+                <h1>Mrinal Sinha</h1>
+                <p class="title">Engineering @ Paylocity</p>
+                <div class="social-icons">
+                    <a href="mailto:mail@themrinalsinha.com" class="icon" aria-label="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/themrinalsinha" target="_blank" rel="noopener" class="icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/themrinalsinha" target="_blank" rel="noopener" class="icon" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/themrinalsinha" target="_blank" rel="noopener" class="icon" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://mastodon.social/@themrinalsinha" target="_blank" rel="me noopener" class="icon" aria-label="Mastodon">
+                        <i class="fa-brands fa-mastodon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote">
+            Held the position of Senior Software Engineer at Airbase, which was acquired by Paylocity in October 2024.
+        </div>
+
+        <div class="content">
+            <p>
                 Engineer, Innovator, and Nonconformist with a passion for building scalable
-                distributed systems. With expertise in backend development, AI (LLM, RAG) &
+                distributed systems. With expertise in backend development, AI (LLM, RAG, Agents) &
                 open-source contributions, I blend technical skills with relentless drive for
                 innovation, consistently delivering impactful solutions.
             </p>
-            <p class="about">
+            <p>
                 Outside of work, I'm involved in open-source projects, driven by a commitment to
                 collaboration and knowledge sharing. In my free time, I pursue creative outlets
                 like painting and reading, and fuel my adventurous side with motorcycle track racing.
             </p>
-
-            <!-- Social Media Links -->
-            <div class="social-icons">
-                <a href="mailto:mail@themrinalsinha.com" target="_blank" class="icon">
-                    <i class="fa-regular fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/themrinalsinha" target="_blank" class="icon">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/themrinalsinha" target="_blank" class="icon">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://x.com/themrinalsinha" target="_blank" class="icon">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a rel="me" href="https://mastodon.social/@themrinalsinha" target="_blank" class="icon">
-                    <i class="fa-brands fa-mastodon"></i>
-                </a>
-            </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Fixed Footer -->
     <footer>
         <p>Mrinal Sinha &copy; 2017-2025</p>
     </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.querySelector('.theme-toggle i');
+
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                icon.className = 'fas fa-moon';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.className = 'fas fa-sun';
+            }
+        }
+    </script>
 </body>
 </html>
