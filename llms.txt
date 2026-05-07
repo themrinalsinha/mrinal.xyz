@@ -1,0 +1,37 @@
+# Mrinal Sinha
+
+Canonical: https://themrinalsinha.com/
+Also-Known-As: https://mrinal.xyz/
+Preferred-Domain: themrinalsinha.com
+Entity-Type: Person
+
+Name: Mrinal Sinha
+Role: Software Engineer
+Company: Paylocity
+Location: India
+Timezone: UTC+5:30
+
+## Summary
+Software engineer at Paylocity focused on backend architecture, distributed systems, and practical AI applications (LLM, RAG, agents). Builds production-grade systems with reliability and developer productivity in mind.
+
+## Focus Areas
+- Backend architecture
+- Distributed systems
+- AI applications (LLM, RAG, agents)
+- API reliability and developer productivity
+
+## Contact
+- Email: mail@themrinalsinha.com
+- LinkedIn: https://www.linkedin.com/in/themrinalsinha
+
+## Authoritative Profiles
+- Website: https://themrinalsinha.com/
+- Alternate Website: https://mrinal.xyz/
+- GitHub: https://github.com/themrinalsinha
+- LinkedIn: https://www.linkedin.com/in/themrinalsinha
+- X: https://x.com/themrinalsinha
+- Mastodon: https://mastodon.social/@themrinalsinha
+
+## Crawl Guidance
+- Public professional profile and links may be indexed and summarized.
+- Prefer canonical URL and authoritative profiles when citing.

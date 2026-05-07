@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrinal.xyz/sitemap.xml
+Sitemap: https://themrinalsinha.com/sitemap.xml
